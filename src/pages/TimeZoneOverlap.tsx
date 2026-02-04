@@ -1,7 +1,6 @@
-import {useEffect, useState} from "react";
+import {useState} from "react";
 import {calculateTimeZoneOverlap} from "../calculators/timeZoneOverlap/calculate";
 import {formatTimeZoneOverlapResult} from "../calculators/timeZoneOverlap/formatResult";
-import Footer from "../components/Footer";
 
 function TimeZoneOverlap() {
   const [offsetA, setOffsetA] = useState<string>("");
@@ -31,17 +30,14 @@ function TimeZoneOverlap() {
     setResultText(formatTimeZoneOverlapResult({offsetA: a, offsetB: b, startHour: s, endHour: e}, result));
   };
 
-  useEffect(() => {
-    document.title = "Time Zone Overlap Calculator | Working Hours Converter";
-  }, []);
-
   return (
     <>
+      <title>Time Zone Overlap Calculator | simple-calculator</title>
+      <meta name="description" content="Calculate overlapping working hours between two time zones using UTC offsets." />
       <header className="header">
         <h1>Time Zone Overlap Calculator</h1>
         <p className="subtitle">Convert working hours across two regions using UTC offsets.</p>
       </header>
-
       <main className="main">
         <section className="calculator-card">
           <input
@@ -85,8 +81,6 @@ function TimeZoneOverlap() {
           </section>
         )}
       </main>
-
-      <Footer />
     </>
   );
 }

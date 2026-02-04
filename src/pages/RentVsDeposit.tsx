@@ -1,7 +1,6 @@
-import {useEffect, useState} from "react";
+import {useState} from "react";
 import {calculateRentVsDeposit} from "../calculators/rentVsDeposit/calculate";
 import {formatRentVsDepositResult} from "../calculators/rentVsDeposit/formatResult";
-import Footer from "../components/Footer";
 
 function RentVsDeposit() {
   const [deposit, setDeposit] = useState<string>("");
@@ -28,17 +27,14 @@ function RentVsDeposit() {
     setResultText(formatRentVsDepositResult({deposit: d, monthlyRent: r, interestRate: rate}, result));
   };
 
-  useEffect(() => {
-    document.title = "Rent vs Deposit Calculator | Annual Cost Comparison";
-  }, []);
-
   return (
     <>
+      <title>전세 vs 월세 계산기 | simple-calculator</title>
+      <meta name="description" content="전세금의 기회비용과 월세 비용을 비교해 어떤 선택이 더 유리한지 계산합니다." />
       <header className="header">
         <h1>전세 vs 월세 비교 계산기</h1>
         <p className="subtitle">전세금 이자와 월세 비용을 비교해 더 유리한 선택을 계산합니다.</p>
       </header>
-
       <main className="main">
         <section className="calculator-card">
           <input
@@ -75,7 +71,6 @@ function RentVsDeposit() {
           </section>
         )}
       </main>
-      <Footer />
     </>
   );
 }

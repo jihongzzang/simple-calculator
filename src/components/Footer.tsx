@@ -1,25 +1,11 @@
-import {Link} from "react-router-dom";
-
 function Footer() {
   return (
-    <footer className="footer">
+    <footer>
       <div className="footer-divider" />
-
-      <nav className="footer-nav">
-        <span className="footer-label">Other calculators</span>
-
-        <div className="footer-links">
-          <Link to="/salary-after-tax">Salary After Tax</Link>
-          <span>·</span>
-          <Link to="/salary-raise">Salary Raise</Link>
-          <span>·</span>
-          <Link to="/rent-vs-deposit">Rent vs Deposit</Link>
-          <span>·</span>
-          <Link to="/time-zone-overlap">Time Zone Overlap</Link>
-        </div>
-      </nav>
-
-      <p>© Simple Calculator</p>
+      <div className="footer">
+        <p style={{margin: 0}}>© {new Date().getFullYear()} simple-calculator</p>
+        <p style={{marginTop: 8}}>This site provides simple calculators for reference purposes only.</p>
+      </div>
     </footer>
   );
 }

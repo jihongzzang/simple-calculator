@@ -1,7 +1,6 @@
-import {useEffect, useState} from "react";
+import {useState} from "react";
 import {calculateSalaryRaise} from "../calculators/salaryRaise/calculate";
 import {formatSalaryRaiseResult} from "../calculators/salaryRaise/formatResult";
-import Footer from "../components/Footer";
 
 function SalaryRaise() {
   const [currentSalary, setCurrentSalary] = useState<string>("");
@@ -26,19 +25,14 @@ function SalaryRaise() {
     setResultText(text);
   };
 
-  useEffect(() => {
-    document.title = "Salary Raise Calculator | Compare Job Offers";
-  }, []);
-
   return (
     <>
-      {/* Header */}
+      <title>이직 연봉 인상률 계산기 | simple-calculator</title>
+      <meta name="description" content="현재 연봉과 제안 연봉을 비교해 연봉 인상률과 월 증가 금액을 계산합니다." />
       <header className="header">
         <h1>이직 연봉 인상률 계산기</h1>
         <p className="subtitle">현재 연봉과 제안 연봉을 비교해 인상률을 계산합니다.</p>
       </header>
-
-      {/* Main */}
       <main className="main">
         <section className="calculator-card">
           <input
@@ -51,7 +45,6 @@ function SalaryRaise() {
               setCurrentSalary(value);
             }}
           />
-
           <input
             type="text"
             inputMode="numeric"
@@ -72,9 +65,6 @@ function SalaryRaise() {
           </section>
         )}
       </main>
-
-      {/* Footer */}
-      <Footer />
     </>
   );
 }

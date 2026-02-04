@@ -5,10 +5,13 @@ import SalaryRaise from "./pages/SalaryRaise";
 import RentVsDeposit from "./pages/RentVsDeposit";
 import TimeZoneOverlap from "./pages/TimeZoneOverlap";
 import "./styles/base.css";
+import Footer from "./components/Footer";
+import Nav from "./components/Nav";
 
 function App() {
   return (
     <BrowserRouter>
+      <Nav />
       <Routes>
         {/* Default */}
         <Route path="/" element={<Navigate to="/salary-after-tax" replace />} />
@@ -22,6 +25,7 @@ function App() {
         {/* Fallback */}
         <Route path="*" element={<Navigate to="/salary-after-tax" replace />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 }

@@ -1,7 +1,6 @@
-import {useEffect, useState} from "react";
+import {useState} from "react";
 import {calculateSalary} from "../calculators/salaryAfterTax/calculate";
 import {formatResult} from "../calculators/salaryAfterTax/formatResult";
-import Footer from "../components/Footer";
 
 function SalaryAfterTax() {
   const [annualSalary, setAnnualSalary] = useState<string>("");
@@ -20,19 +19,14 @@ function SalaryAfterTax() {
     setResultText(text);
   };
 
-  useEffect(() => {
-    document.title = "Salary After Tax Calculator | Simple Calculator";
-  }, []);
-
   return (
     <>
-      {/* Header */}
+      <title>연봉 실수령액 계산기 | simple-calculator</title>
+      <meta name="description" content="연봉을 입력하면 세후 월 실수령액을 바로 계산합니다. 평균 세율 기준의 참고용 계산기입니다." />
       <header className="header">
         <h1>연봉 실수령액 계산기</h1>
         <p className="subtitle">연봉을 입력하면 세후 월 실수령액을 계산합니다.</p>
       </header>
-
-      {/* Main */}
       <main className="main">
         <section className="calculator-card">
           <input
@@ -61,9 +55,6 @@ function SalaryAfterTax() {
           </section>
         )}
       </main>
-
-      {/* Footer */}
-      <Footer />
     </>
   );
 }
