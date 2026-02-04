@@ -1,0 +1,135 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: #6366f1; /* 버튼/포인트 */
+  --text-main: #e5e7eb; /* 메인 텍스트 */
+  --text-sub: #9ca3af; /* 보조 텍스트 */
+  --border: #1f2933; /* 카드 테두리 */
+  --bg: #0f172a; /* 전체 배경 */
+  --card-bg: #111827; /* 카드 배경 */
+}
+
+body {
+  margin: 0;
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  background: var(--bg);
+  color: var(--text-main);
+}
+
+/* Header */
+.header {
+  text-align: center;
+  padding: 48px 16px 32px;
+}
+
+.subtitle {
+  color: var(--text-sub);
+  margin-top: 8px;
+}
+
+/* Layout */
+.main {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 16px 64px;
+}
+
+/* Cards */
+.calculator-card,
+.result-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+  margin-top: 24px;
+}
+
+.result-card {
+  background: #1e1b4b;
+  border-color: #312e81;
+}
+
+/* Inputs & Button */
+input {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 16px;
+  margin-top: 12px;
+  background: #020617;
+  color: var(--text-main);
+}
+
+input::placeholder {
+  color: #64748b;
+}
+
+button {
+  width: 100%;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.92;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  font-size: 14px;
+  color: var(--text-sub);
+  padding: 0 0 32px 0;
+}
+
+.footer-divider {
+  height: 1px;
+  background: #1f2933;
+  margin: 0 0 32px 0;
+}
+
+.footer-nav {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.footer-label {
+  display: block;
+  font-size: 13px;
+  color: #6b7280;
+  margin-bottom: 6px;
+}
+
+.footer-links {
+  font-size: 14px;
+}
+
+.footer-links a {
+  color: #c7d2fe; /* 기존보다 밝게 */
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.footer-links span {
+  margin: 0 6px;
+  color: #475569;
+}
